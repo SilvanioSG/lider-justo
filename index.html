@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Além das Aparências · Liderança, Estética e a Crueza dos Fatos</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== VARIÁVEIS CSS ===== */
+    :root {
+      --primary: #27628d;
+      --primary-dark: #1a4b6e;
+      --primary-light: #eaf2fb;
+      --bg-body: #f4f7fb;
+      --bg-card: #ffffff;
+      --text-dark: #1e2a3a;
+      --text-medium: #1f2c3c;
+      --text-muted: #3f5b74;
+      --border-light: #dde7f0;
+      --shadow-card: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+      --shadow-hover: 0 14px 28px rgba(39, 98, 141, 0.15);
+      --radius-lg: 32px;
+      --radius-md: 20px;
+      --radius-sm: 16px;
+      --transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-body);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 0 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .study-container {
+      max-width: 1100px;
+      width: 100%;
+      background-color: var(--bg-card);
+      box-shadow: var(--shadow-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 1.5rem;
+      transition: all 0.2s;
+    }
+
+    /* ===== CABEÇALHO ===== */
+    .study-header {
+      background-color: var(--primary);
+      padding: 1.8rem 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      color: #fff;
+    }
+    .header-photo {
+      flex-shrink: 0;
+      overflow: visible;
+    }
+    .header-photo img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.6);
+      background: #fff;
+      display: block;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+    .header-photo img:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+      border-color: #ffffff;
+    }
+    .header-title {
+      flex: 1;
+      min-width: 200px;
+    }
+    .header-title h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+    .header-title .subhead {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.9;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .header-title .subhead .name {
+      font-weight: 500;
+    }
+    .header-contact {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.4rem 1.2rem 0.4rem 1rem;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+      transition: 0.2s;
+    }
+    .header-contact a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: 0.15s;
+    }
+    .header-contact a:hover {
+      border-bottom-color: rgba(255, 255, 255, 0.7);
+      opacity: 0.9;
+    }
+    .header-contact i {
+      font-size: 1.2rem;
+    }
+
+    /* ===== SUMÁRIO (ÍNDICE) ===== */
+    .toc {
+      background: var(--primary-light);
+      padding: 0.8rem 2.2rem;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .toc span {
+      color: var(--text-muted);
+      margin-right: 0.2rem;
+    }
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      padding: 0.2rem 0;
+    }
+    .toc a:hover {
+      border-bottom-color: var(--primary);
+      color: var(--primary-dark);
+    }
+    .toc .toc-sep {
+      color: var(--border-light);
+      font-weight: 300;
+    }
+
+    /* ===== CORPO ===== */
+    .study-body {
+      padding: 2.2rem 2.5rem;
+    }
+
+    section[id] {
+      scroll-margin-top: 1.5rem;
+    }
+
+    .study-body h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2.2rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      border-left: 5px solid var(--primary);
+      padding-left: 1rem;
+      transition: border-left-width 0.25s ease, padding-left 0.25s ease, color 0.2s;
+    }
+    .study-body h2:hover {
+      border-left-width: 8px;
+      padding-left: 1.2rem;
+      color: var(--primary-dark);
+    }
+    .study-body h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .study-body h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.5rem;
+      color: #1e3b4f;
+      transition: color 0.2s;
+    }
+    .study-body h3:hover {
+      color: var(--primary);
+    }
+
+    .study-body p {
+      margin-bottom: 1rem;
+      color: var(--text-medium);
+      transition: color 0.2s;
+    }
+
+    .study-body .highlight-box {
+      background: var(--primary-light);
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius-md);
+      margin: 1.8rem 0;
+      border-left: 6px solid var(--primary);
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
+      transition: all var(--transition);
+    }
+    .study-body .highlight-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-left-width: 8px;
+      background: #eaf2fb;
+    }
+    .study-body .highlight-box strong {
+      color: var(--primary);
+    }
+
+    .study-body blockquote {
+      font-style: italic;
+      background: #f9fafc;
+      padding: 1.2rem 2rem;
+      border-radius: 18px;
+      margin: 1.8rem 0;
+      color: #1e3b4f;
+      border: 1px solid #e2e9f2;
+      font-weight: 400;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      position: relative;
+      transition: all var(--transition);
+    }
+    .study-body blockquote:hover {
+      border-left-color: var(--primary);
+      background: #f2f7fc;
+      transform: translateX(6px);
+      box-shadow: 0 8px 20px rgba(39, 98, 141, 0.08);
+    }
+    .study-body blockquote::before {
+      content: '\201C';
+      font-size: 2.5rem;
+      color: var(--primary);
+      position: absolute;
+      left: 0.5rem;
+      top: -0.2rem;
+      opacity: 0.3;
+      font-family: serif;
+    }
+
+    .study-body ul,
+    .study-body ol {
+      padding-left: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .study-body li {
+      margin-bottom: 0.4rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .study-body li:hover {
+      color: var(--primary-dark);
+      transform: translateX(4px);
+    }
+
+    .framework-step {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.8rem;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 10px -6px rgba(39, 98, 141, 0.08);
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .framework-step:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+      background: #fafcff;
+    }
+    .framework-step .step-label {
+      font-weight: 600;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-insight {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 60px;
+      letter-spacing: 0.02em;
+      margin-right: 0.3rem;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(39, 98, 141, 0.2), rgba(39, 98, 141, 0.6), rgba(39, 98, 141, 0.2));
+      margin: 2.2rem 0;
+    }
+
+    .small-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Cards de Perfil */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 600px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .profile-card {
+      padding: 1.5rem 1.8rem;
+      border-radius: var(--radius-md);
+      background: #fff;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: all var(--transition);
+    }
+    .profile-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .profile-card h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    .profile-card.borboleta {
+      border-top: 6px solid #f5b041;
+    }
+    .profile-card.barata {
+      border-top: 6px solid #5d6d7e;
+    }
+    .profile-card .emoji-big {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .action-item {
+      background: #f5f9fe;
+      padding: 1.2rem 1rem;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      border: 1px solid #e3ecf5;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .action-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      background: #ffffff;
+      border-color: var(--primary);
+    }
+    .action-item i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      transition: transform 0.3s ease;
+    }
+    .action-item:hover i {
+      transform: scale(1.1);
+    }
+    .action-item h4 {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #1e3b4f;
+    }
+    .action-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .checklist-block {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem 2rem;
+      border: 1px solid var(--border-light);
+      margin: 1.5rem 0;
+    }
+    .checklist-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist-block li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #f0f4f9;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    .checklist-block li:last-child {
+      border-bottom: none;
+    }
+    .checklist-block li i {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+      width: 1.5rem;
+      text-align: center;
+    }
+
+    .pledge-box {
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(39, 98, 141, 0.25);
+      transition: all var(--transition);
+    }
+    .pledge-box:hover {
+      transform: scale(1.01);
+      box-shadow: 0 14px 30px rgba(39, 98, 141, 0.35);
+    }
+    .pledge-box h3 {
+      color: #fff;
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    .pledge-box p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0.5rem auto 1rem;
+    }
+    .pledge-box .pledge-btn {
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .pledge-box .pledge-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      background: #f0f5fc;
+    }
+
+    /* ===== RODAPÉ ===== */
+    .study-footer {
+      background: var(--primary-light);
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #dce6f0;
+      font-size: 0.9rem;
+      color: #1f3a4f;
+      transition: background 0.3s;
+    }
+    .study-footer:hover {
+      background: #e8eff7;
+    }
+    .study-footer .copy {
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    .study-footer .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .study-footer .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .study-footer .footer-links a:hover {
+      border-bottom-color: var(--primary);
+      opacity: 0.8;
+    }
+
+    /* ===== BOTÃO FLUTUANTE ===== */
+    .floating-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 16px rgba(39, 98, 141, 0.35);
+      border: none;
+      cursor: pointer;
+      transition: 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .floating-top.visible {
+      opacity: 0.9;
+      pointer-events: auto;
+    }
+    .floating-top:hover {
+      background: #1f5a7a;
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 14px 28px rgba(39, 98, 141, 0.4);
+      opacity: 1;
+    }
+    .floating-top:active {
+      transform: scale(0.92);
+    }
+
+    /* ===== ESTILO PARA IMPRESSÃO / PDF ===== */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .study-container {
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+      .study-header {
+        background: #27628d !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .header-photo img {
+        border: 2px solid #fff;
+      }
+      .toc {
+        background: #f0f5fc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .floating-top {
+        display: none !important;
+      }
+      .pledge-box {
+        background: #27628d !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pledge-btn {
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .action-item,
+      .profile-card,
+      .framework-step,
+      .checklist-block,
+      .highlight-box {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+      }
+      .study-footer {
+        background: #f0f5fc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .study-body h2 {
+        border-left-color: #27628d;
+      }
+      a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #555;
+      }
+      .toc a[href]::after {
+        content: "";
+      }
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 700px) {
+      .study-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+      }
+      .header-contact {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: 0.4rem 0.8rem;
+      }
+      .header-title h1 {
+        font-size: 1.4rem;
+      }
+      .study-body {
+        padding: 1.5rem;
+      }
+      .study-footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1.2rem 1.5rem;
+        text-align: center;
+      }
+      .study-footer .footer-links {
+        justify-content: center;
+      }
+      .floating-top {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        bottom: 16px;
+        right: 16px;
+      }
+      .toc {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        gap: 0.2rem 0.8rem;
+        justify-content: center;
+      }
+      .pledge-box {
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .header-title .subhead {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+      }
+      .header-photo img {
+        width: 70px;
+        height: 70px;
+      }
+      .study-body h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="study-container">
+    <!-- CABEÇALHO -->
+    <header class="study-header">
+      <div class="header-photo">
+        <img src="Gestão_SG.png" alt="Silvanio Gois - Especialista em Liderança e Gestão Estratégica" loading="lazy">
+      </div>
+      <div class="header-title">
+        <h1>Você lidera pelo brilho ou pelos dados? O viés estético que cega gestores</h1>
+        <div class="subhead">
+          <span class="name">Silvanio Gois</span>
+          <span style="opacity:0.7;">|</span>
+          <span>Gestão &amp; Estratégia</span>
+        </div>
+      </div>
+      <div class="header-contact">
+        <a href="https://wa.me/5513988301094?text=Olá%20Silvanio%2C%20li%20seu%20estudo%20sobre%20liderança!" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <!-- SUMÁRIO -->
+    <nav class="toc" aria-label="Sumário do estudo">
+      <span><i class="fas fa-list-ul" aria-hidden="true"></i> Neste estudo:</span>
+      <a href="#paradoxo">O Paradoxo</a>
+      <span class="toc-sep">|</span>
+      <a href="#riscos">Riscos</a>
+      <span class="toc-sep">|</span>
+      <a href="#framework">Framework</a>
+      <span class="toc-sep">|</span>
+      <a href="#dilema">Dilema</a>
+      <span class="toc-sep">|</span>
+      <a href="#feedback">Feedback</a>
+      <span class="toc-sep">|</span>
+      <a href="#metricas">Métricas</a>
+      <span class="toc-sep">|</span>
+      <a href="#acao">Plano de Ação</a>
+      <span class="toc-sep">|</span>
+      <a href="#conclusao">Conclusão</a>
+      <span class="toc-sep">|</span>
+      <a href="#reflexao">Reflexão</a>
+    </nav>
+
+    <!-- CORPO -->
+    <main class="study-body">
+      <p style="font-size:1.1rem; font-weight:400; color:#2c4056; margin-bottom:1.8rem;">
+        <span class="badge-insight">ensaio</span> Uma análise pessoal sobre o paradoxo da gestão estética,
+        a moralidade das aparências e o resgate da liderança baseada em fatos.
+      </p>
+
+      <section id="paradoxo">
+        <h2>1. A Transposição do Conceito <span style="font-weight:300; font-size:1.2rem;">(O Paradoxo Corporativo)</span></h2>
+        <div class="profile-grid">
+          <div class="profile-card borboleta">
+            <span class="emoji-big">🦋</span>
+            <h3>O “Funcionário Borboleta”</h3>
+            <p>É aquele colaborador com excelente oratória, carismático, que se vende muito bem e adota a postura perfeita em reuniões. Ele agrada visual e socialmente à liderança. Por causa dessa “estética”, seus erros e entregas rasas costumam ser perdoados ou ignorados.</p>
+          </div>
+          <div class="profile-card barata">
+            <span class="emoji-big">🪳</span>
+            <h3>O “Funcionário Barata”</h3>
+            <p>É o colaborador técnico, focado, que muitas vezes aponta problemas difíceis de encarar ou possui uma comunicação muito direta e sem rodeios. Ele causa um desconforto natural (estético/comportamental) na liderança. Por isso, mesmo que entregue ótimos resultados, costuma ser rotulado como “difícil” ou “problemático”.</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p style="margin-bottom:0;"><strong> O paradoxo:</strong> No universo corporativo, o escritório frequentemente se transforma em um cenário kafkiano: uma máquina burocrática, fria e cheia de regras invisíveis. O colaborador técnico, ao apontar falhas, é transformado em inseto repulsivo — a “barata” — aos olhos da gestão, simplesmente por romper a ilusão de perfeição.</p>
+        </div>
+      </section>
+
+      <section id="riscos">
+        <h2>2. Os Riscos dessa “Gestão Estética” para o Líder</h2>
+        <ul>
+          <li><strong>Injustiça na Avaliação:</strong> Promover o carisma em detrimento da competência técnica.</li>
+          <li><strong>Cultura de Aparências:</strong> Estimular uma equipe fictícia que foca em parecer produtiva (teatro corporativo) em vez de gerar valor real.</li>
+          <li><strong>Cegueira Estratégica:</strong> Ignorar alertas cruciais trazidos pelo “funcionário barata” simplesmente porque o tom da mensagem incomodou.</li>
+        </ul>
+        <blockquote>
+          “No microcosmo de uma empresa, a caneta da narrativa está na mão da liderança e da política interna. Se a avaliação muda dependendo de quem cometeu o erro, você não está liderando; está operando um sistema de favoritismo disfarçado de meritocracia.”
+        </blockquote>
+      </section>
+
+      <section id="framework">
+        <h2>3. Framework para uma Liderança Baseada em Dados e Fatos <span style="font-weight:300; font-size:1.1rem;">(Rompendo o Viés)</span></h2>
+        <p>Para não cair na armadilha da “moral estética”, o gestor precisa substituir o julgamento instintivo por processos estruturados:</p>
+        <div style="background:#eaf1f9; border-radius:28px; padding:0.5rem 1.5rem 1.5rem; margin:1rem 0 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+          <p style="font-weight:500; margin-top:0.8rem;"><i class="fas fa-arrow-right" style="color:var(--primary);" aria-hidden="true"></i> Sentimento Incorreto ➔ Julgar pelo Comportamento/Aparência (Estética)</p>
+          <p style="font-weight:500;"><i class="fas fa-arrow-down" style="color:var(--primary);" aria-hidden="true"></i></p>
+          <p style="font-weight:500; color:var(--primary);"><i class="fas fa-check-circle" aria-hidden="true"></i> Ação do Líder Lógico ➔ Auditar os Dados e Entregas Reais (Métricas)</p>
+          <p style="font-weight:500;"><i class="fas fa-arrow-down" style="color:var(--primary);" aria-hidden="true"></i></p>
+          <p style="font-weight:500; color:var(--primary);"><i class="fas fa-balance-scale" aria-hidden="true"></i> Decisão Justa ➔ Neutralizar a Afinidade em Prol do Resultado</p>
+        </div>
+
+        <div class="framework-step">
+          <span class="step-label"><i class="fas fa-chart-line" style="margin-right:6px;" aria-hidden="true"></i> Passo 1 · KPIs Claros</span>
+          <p><strong>Como fazer:</strong> Defina metas numéricas e entregáveis específicos para cada função. <br><strong>Por que funciona:</strong> O resultado em números é neutro. Ele não é bonito como a borboleta nem feio como a barata; ele apenas reflete a realidade.</p>
+        </div>
+        <div class="framework-step">
+          <span class="step-label"><i class="fas fa-comment-dots" style="margin-right:6px;" aria-hidden="true"></i> Passo 2 · Separe o “Tom” do “Conteúdo”</span>
+          <p><strong>Como fazer:</strong> Quando um colaborador trouxer uma crítica desconfortável, o líder deve se perguntar: “O que ele está dizendo é verdade e ajuda o negócio?”. Se a resposta for sim, ignore o desconforto pessoal (a “aparência” da barata) e foque na solução.</p>
+        </div>
+        <div class="framework-step">
+          <span class="step-label"><i class="fas fa-users" style="margin-right:6px;" aria-hidden="true"></i> Passo 3 · Promova a Diversidade Cognitiva</span>
+          <p><strong>Como fazer:</strong> Entenda que times de alta performance precisam de pessoas de perfis diferentes. Quem executa e quem questiona são tão necessários quanto quem vende e quem encanta.</p>
+        </div>
+      </section>
+
+      <hr>
+
+      <section id="dilema">
+        <h2>4. O Dilema do Líder: entre o conforto e a verdade</h2>
+        <p>O líder moderno vive um conflito existencial: deseja harmonia na equipe, mas precisa de resultados concretos. A tendência natural é rodear-se de pessoas que reforçam sua visão de mundo — as “borboletas” que validam seu ego. No entanto, como alertou Nietzsche, “a moral é, no fundo, pura estética”. O desconforto causado pela “barata” é, na verdade, o preço da lucidez.</p>
+        <p>Para superar esse dilema, o líder precisa desenvolver a <strong>coragem de encarar a verdade</strong>, mesmo quando ela vem em uma embalagem áspera. A verdade não precisa ser bonita; ela precisa ser útil.</p>
+
+        <h3>📖 Caso prático: A história de duas lideranças</h3>
+        <div style="background:#f9fcff; border-radius:var(--radius-md); padding:1.2rem 1.8rem; border:1px dashed var(--border-light); margin:1rem 0;">
+          <p><strong>Líder A (Gestão Estética):</strong> Priorizava a aparência e a fluência em reuniões. Promoveu um vendedor carismático que sempre trazia boas notícias, mas ignorou o analista de dados que alertava sobre a queda real de margem. Em 6 meses, a equipe perdeu 15% de eficiência operacional.</p>
+          <p><strong>Líder B (Gestão por Fatos):</strong> Incentivava relatórios transparentes e dava voz a críticos construtivos. Quando um engenheiro apontou um risco grave no produto, o líder B interrompeu a reunião para validar os dados. O problema foi corrigido a tempo, economizando R$ 2M em recall.</p>
+          <p style="margin-bottom:0; font-weight:500; color:var(--primary);"> Conclusão: O conforto da borboleta é ilusório; a verdade da barata é lucrativa.</p>
+        </div>
+      </section>
+
+      <section id="feedback">
+        <h2>5. A construção de uma cultura de feedback honesto</h2>
+        <p>Uma cultura organizacional saudável não nasce de manuais ou slogans. Ela é forjada no dia a dia, quando líderes e liderados praticam a <strong>comunicação não violenta</strong> associada à <strong>objetividade</strong>. Isso significa:</p>
+        <ul>
+          <li>Estabelecer rituais de feedback estruturados, com perguntas diretas sobre entregas e comportamentos observáveis.</li>
+          <li>Separar o “pessoa” do “profissional”: críticas ao trabalho não são ataques à identidade.</li>
+          <li>Incentivar que os colaboradores tragam problemas, não apenas soluções — e recompensar aqueles que o fazem de forma construtiva.</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong> Lembrete kafkiano:</strong> O escritório é um tribunal invisível. O líder deve ser o juiz que julga fatos, não aparências. Para isso, crie canais onde a verdade possa ser dita sem que o mensageiro seja punido.</p>
+        </div>
+        <h3>🗣️ Exemplo de feedback baseado em fatos</h3>
+        <div style="background:#fff; border-radius:var(--radius-sm); padding:1rem 1.5rem; border-left:4px solid var(--primary); margin:0.5rem 0 1.5rem;">
+          <p><strong>Ao invés de:</strong> “Você foi muito agressivo na reunião, ninguém gostou da sua postura.”</p>
+          <p><strong>Digamos:</strong> “Na reunião de hoje, você interrompeu três colegas e não validou os dados apresentados pelo João. Precisamos que as críticas sejam feitas com base em números e no final da fala do outro. Como podemos ajustar isso na próxima?”</p>
+        </div>
+      </section>
+
+      <section id="metricas">
+        <h2>6. Métricas que importam: evitando a vaidade</h2>
+        <p>Muitas organizações se perdem em métricas de vaidade — número de reuniões, horas trabalhadas, elogios em pesquisas de clima — que não refletem a geração de valor real. O líder lógico deve focar em <strong>indicadores de resultado</strong>:</p>
+        <ul>
+          <li><strong>Entregas concluídas</strong> com qualidade (não apenas quantidade).</li>
+          <li><strong>Impacto nos negócios</strong> (crescimento de receita, redução de custos, satisfação de clientes).</li>
+          <li><strong>Taxa de retrabalho</strong> e <strong>erros críticos</strong>.</li>
+        </ul>
+        <p>Quando a avaliação se baseia nesses números, a “borboleta” perde o brilho fácil e a “barata” ganha o reconhecimento que merece.</p>
+      </section>
+
+      <section id="acao">
+        <h2>7. Plano de Ação para o Líder Transformador</h2>
+        <p>Para aplicar esses conceitos no dia a dia, sugiro as seguintes ações práticas:</p>
+        <div class="action-grid">
+          <div class="action-item">
+            <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+            <h4>Auditoria de vieses</h4>
+            <p>Revise as últimas 5 avaliações: houve diferença de critério entre perfis?</p>
+          </div>
+          <div class="action-item">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <h4>Feedback 360°</h4>
+            <p>Incentive feedback anônimo e estruturado para capturar a percepção real.</p>
+          </div>
+          <div class="action-item">
+            <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+            <h4>Metas SMART</h4>
+            <p>Defina metas específicas, mensuráveis, alcançáveis, relevantes e temporais.</p>
+          </div>
+          <div class="action-item">
+            <i class="fas fa-user-check" aria-hidden="true"></i>
+            <h4>Reconhecimento justo</h4>
+            <p>Celebre entregas reais, não apenas comportamentos agradáveis.</p>
+          </div>
+        </div>
+
+        <h3> Checklist mensal do líder (autoavaliação)</h3>
+        <div class="checklist-block">
+          <ul>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Revisei as entregas da equipe com base em dados objetivos ou apenas em impressões?</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Dei feedback específico e construtivo para a “barata” da equipe esta semana?</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Evitei tratar com leniência algum erro de uma “borboleta” por afinidade?</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Incentivei a diversidade de opiniões em reuniões ou apenas busquei validação?</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Reconheci publicamente uma entrega difícil, mesmo que o autor seja “desconfortável”?</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <hr>
+
+      <section id="conclusao">
+        <h2>8. Conclusão para o Líder <span style="font-weight:300; font-size:1.1rem;">(além do teatro)</span></h2>
+        <p>O papel de um líder maduro não é gostar do “visual” ou da personalidade de todos os liderados, mas sim garantir que a justiça meritocrática guie a equipe. O verdadeiro herói na gestão não é quem caça baratas ou idolatra borboletas, mas quem sabe extrair o melhor valor de cada profissional para o objetivo comum da empresa.</p>
+
+        <div class="pledge-box">
+          <i class="fas fa-handshake" style="font-size:2.5rem; margin-bottom:0.5rem; display:block;" aria-hidden="true"></i>
+          <h3> Compromisso do Líder</h3>
+          <p><em>“Supere a Moral Estética (Nietzsche): entenda que o desconforto gerado por um colaborador questionador é, muitas vezes, o combustível que a empresa precisa para não estagnar. Aprecie o valor da entrega, não a embalagem do comportamento.”</em></p>
+          <p style="font-size:0.9rem; opacity:0.8;">— adaptado do ensaio <strong>“Além das Aparências”</strong></p>
+          <button class="pledge-btn" onclick="alert('Assine virtualmente este compromisso clicando em "Eu assumo"!')">
+            <i class="fas fa-pen-fancy" aria-hidden="true"></i> Eu assumo este compromisso
+          </button>
+        </div>
+
+        <!-- CTA para salvar/imprimir -->
+        <div style="text-align:center; margin: 1.5rem 0 0.5rem; padding:1.2rem; background:#f5f9fe; border-radius:var(--radius-md); border:1px solid #e3ecf5;">
+          <p style="margin-bottom:0.2rem;"><strong>Quer aprofundar este tema com sua equipe?</strong></p>
+          <p style="font-size:0.95rem; margin-bottom:0.8rem;">Salve ou imprima este estudo completo para compartilhar com outros líderes.</p>
+          <!-- Botão que chama window.print() -->
+          <button onclick="window.print()" style="background:var(--primary); color:#fff; padding:0.6rem 2rem; border-radius:60px; border:none; font-weight:600; font-size:1rem; cursor:pointer; transition:0.2s; box-shadow:0 4px 10px rgba(0,0,0,0.05); display:inline-flex; align-items:center; gap:0.6rem;">
+            <i class="fas fa-download" aria-hidden="true"></i> Salvar / Imprimir Estudo
+          </button>
+        </div>
+      </section>
+
+      <section id="reflexao">
+        <h2 style="margin-top:0.5rem;"><i class="fas fa-brain" style="color:var(--primary); margin-right:10px;" aria-hidden="true"></i> Perguntas para Reflexão</h2>
+        <div style="display:flex; flex-direction:column; gap:1.2rem; margin:1.2rem 0 0.8rem;">
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">1.</span> Quem são as nossas “baratas” e “borboletas”? Como a liderança tem tratado esses perfis?</div>
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">2.</span> Nós toleramos o “erro do bem-relacionado” e punimos o “erro do isolado”?</div>
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">3.</span> O quanto do nosso feedback é técnico e o quanto é apenas um desejo de “domesticar” o estilo do outro?</div>
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">4.</span> Estamos criando um ambiente seguro para a verdade ou um berçário de “sim-senhores”?</div>
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">5.</span> Se a história do nosso trimestre fosse contada apenas por dados, ela seria igual à história que contamos nos PowerPoints?</div>
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">6.</span> Qual é o primeiro processo ou métrica que precisamos criar hoje para blindar nossas avaliações contra o viés de afinidade?</div>
+          <div style="transition: transform 0.2s, color 0.2s; padding: 0.2rem 0.5rem; border-radius: 8px;"><span style="font-weight:600; color:var(--primary);">7.</span> Como podemos incentivar a diversidade cognitiva sem perder a coesão da equipe?</div>
+        </div>
+        <p class="small-meta" style="margin-top:0.5rem;">Baseado no manifesto e na dinâmica proposta para gestores.</p>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="study-footer">
+      <span class="copy"><i class="far fa-copyright" aria-hidden="true"></i> 2026 Silvanio Gois - Todos os direitos reservados</span>
+      <div class="footer-links">
+        <a href="https://www.silvaniogois.com.br/" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-globe" aria-hidden="true"></i> ir ao Site
+        </a>
+        <!-- Link do LinkedIn corrigido -->
+        <a href="https://www.linkedin.com/in/silvanio-gois/" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- BOTÃO FLUTUANTE -->
+  <button class="floating-top" id="backToTopBtn" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('backToTopBtn');
+      if (!btn) return;
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const header = document.querySelector('.study-header');
+      if (header) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              btn.classList.remove('visible');
+            } else {
+              btn.classList.add('visible');
+            }
+          });
+        }, {
+          threshold: 0.5,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        observer.observe(header);
+      } else {
+        btn.classList.add('visible');
+      }
+
+      setTimeout(() => {
+        const headerRect = header?.getBoundingClientRect();
+        if (headerRect && headerRect.bottom < 0) {
+          btn.classList.add('visible');
+        }
+      }, 100);
+    })();
+  </script>
+</body>
+</html>
